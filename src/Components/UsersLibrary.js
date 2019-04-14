@@ -2,22 +2,26 @@ import React from 'react';
 
 const UsersLibrary = (props) => {
 
-  return(
-    <div>
-      <ul>
+  return (
+
+    <main className="wrapper">
+      <ul className="musicLibrary">
         {
           props.usersLibrary.map(song => {
-              return(
-                <li key={song.id}>
-                  <h2>{song.title}</h2>
-                  <h3>{song.artist}</h3>
-                </li>
-              )
-            }
+            return (
+              <li key={song.id} className="songDetails">
+                <h2>{song.title}</h2>
+                <h3>{song.artist}</h3>
+                <button><i class="far fa-play-circle"></i></button>
+              </li>
+            )
+          }
           )
         }
       </ul>
-    </div>
+    </main>
+
+
   )
 }
 

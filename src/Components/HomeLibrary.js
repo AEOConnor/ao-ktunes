@@ -1,31 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+
 
 const HomeLibrary = (props) => {
-  return(
-    <React.Fragment>
-      <main>
-        <ul>
-          {props.homeLibrary.map(song => {
-            return(
-              <li key={song.id}>
-              <h2>Song Title: {song.title}</h2>
-                <h3>Artist: {song.artist}</h3>
-              <audio controls>
-                  <source src="" type="audio/mp3" />
-              </audio>
-                
-                {/* will need on click  to have song sent to user's downloaded song*/}
-                <button value={song.id} onClick={props.downloadSong}>Download Song <span><i className="fas fa-music"></i></span></button>
+  return (
 
-              </li>
-            )
-          })
-          }
-        </ul>
-      </main>
-      
-    </React.Fragment>
+    <main className="wrapper">
+      <ul className="musicLibrary">
+
+        {props.homeLibrary.map(song => {
+          return (<li key={song.id} className="songDetails">
+            <h2>Song: {song.title}</h2>
+            <h3>Artist: {song.artist}</h3>
+            <button value={song.id} onClick={props.downloadSong}>Download Song <span><i className="fas fa-music"></i></span></button>
+          </li>
+          )
+        })}
+        
+      </ul>
+    </main>
+
   )
 }
 

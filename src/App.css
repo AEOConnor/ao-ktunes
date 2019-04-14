@@ -20,7 +20,9 @@ body {
 
 h1,
 h2,
-p {
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
 }
@@ -41,13 +43,18 @@ a {
   margin: 0 auto;
 }
 
+.errorMessage {
+  background: rgba(255, 255, 255, 0.5);
+  color: #000;
+}
+
 /* Global styles end */
 
 /* Header component styles begin */
 
 .Header {
   min-height: 10vh;
-
+  border-bottom: 1px solid lightgray;
 }
 
 .Header h1 {
@@ -189,10 +196,38 @@ input[type="submit"]:focus {
 }
 /* SignIn & CreateUser component styles end */
 
+/* HomeLibrary component styles start */
+
+.songDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 10px 0;
+  border: 1px solid grey;
+  padding: 20px;
+  background: lightgray;
+}
+
+.songDetails h2,
+.songDetails h3 {
+  width: 40%;
+}
+
+.songDetails button {
+  width: 20%;
+}
+
+.songDetails h3 {
+  text-align: center;
+}
+
+/* HomeLibrary component styles end */
+
 /* Footer component styles start */
 footer {
   min-height: 5vh;
   text-align: center;
-  align-content: center;
+  padding-top: .5vh;
 }
 /* Footer component styles end */

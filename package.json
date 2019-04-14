@@ -4,14 +4,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "midi-file-parser": "^1.0.0",
-    "midiconvert": "^0.4.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "sweetalert2": "^8.8.3",
-    "xml-js": "^1.6.11",
     "xml2js": "^0.4.19"
   },
   "scripts": {

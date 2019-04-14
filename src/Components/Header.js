@@ -12,18 +12,14 @@ const Header = (props) => {
         </div>
         <h1><Link to="/">kTunes</Link></h1>
 
-        {props.signInSuccess ? 
-        
-          <p><span>Welcome back, {props.username}!</span><span><Link to="/home">kTunes Home</Link></span><span><button onClick={props.listUsersSongs}><Link to="/mylibrary">My Library</Link></button></span>
-          </p> 
-       
-         : 
-        
-        
-        <p><span className="signInLink"><Link to="/signin">Sign In</Link></span><span className="signInLink"><Link to="/newuser">Sign Up</Link></span> </p>}
+        {/* ternary operate to check if the user signed in successfully, and display respective contetn */}
+        {props.signInSuccess ?
+          <p><span><Link to="/home" className="signInLink">kTunes Home</Link></span><span><button onClick={props.listUsersSongs}><Link to="/mylibrary" className="signInLink">My Library</Link></button></span>
+          </p>
+          :
+          <p><span className="signInLink"><Link to="/signin">Sign In</Link></span><span className="signInLink"><Link to="/newuser">Sign Up</Link></span> </p>
+        }
       </div>
-
-
     </header>
   )
 }

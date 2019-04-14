@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const CreateUser = (props) => {
   return (
-    <div className="gradient">
+    <main className="gradient">
       <h2>Explore. Listen. Repeat.</h2>
       <p>Create an account below.</p>
       <form onSubmit={props.createUser} className="signInForm">
@@ -21,16 +21,18 @@ const CreateUser = (props) => {
 
         {props.signInError !== null ?
 
-          <p>{props.signInError} <Link to="/signin">Sign In</Link></p>
+          <p>{props.signInError} <Link to="/signin" className="signInLink">Sign In</Link></p>
 
           : null
         }
       </form>
+      {props.errorMessage !== null ? <p>{props.errorMessage}</p> : null}
 
-
-    
-
-    </div>
+      {props.signInSuccess ?
+        <Redirect to="/home" />
+        : null
+      }
+    </main>
   )
 }
 
