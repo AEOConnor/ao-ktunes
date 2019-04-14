@@ -5,9 +5,6 @@ const HomeLibrary = (props) => {
   return(
     <React.Fragment>
       <main>
-        <button onClick={props.listUsersSongs}> 
-          <Link to="/mylibrary" >My kTunes Library</Link> 
-        </button>
         <ul>
           {props.homeLibrary.map(song => {
             return(

@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 const CreateUser = (props) => {
   return (
     <div className="gradient">
-
+      <h2>Explore. Listen. Repeat.</h2>
+      <p>Create an account below.</p>
       <form onSubmit={props.createUser} className="signInForm">
 
         <label htmlFor="username" className="visuallyHidden">Username</label>

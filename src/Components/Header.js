@@ -12,7 +12,15 @@ const Header = (props) => {
         </div>
         <h1><Link to="/">kTunes</Link></h1>
 
-        {props.signInSuccess ? <Link to="/home">kTunes Home</Link> : <p><span className="signInLink"><Link to="/signin">Sign In</Link></span><span className="signInLink"><Link to="/newuser">Sign Up</Link></span> </p>}
+        {props.signInSuccess ? 
+        
+          <p><span>Welcome back, {props.username}!</span><span><Link to="/home">kTunes Home</Link></span><span><button onClick={props.listUsersSongs}><Link to="/mylibrary">My Library</Link></button></span>
+          </p> 
+       
+         : 
+        
+        
+        <p><span className="signInLink"><Link to="/signin">Sign In</Link></span><span className="signInLink"><Link to="/newuser">Sign Up</Link></span> </p>}
       </div>
 
 

@@ -4,9 +4,13 @@ import {Link, Redirect} from 'react-router-dom'
 const SignIn = (props) => {
 
     return (
-
       <div className="gradient">
+        <h2>Explore. Listen. Repeat.</h2>
+        <p>Welcome back! Please sign in.</p>
         <form onSubmit={props.listUsersSongs} className="signInForm">
+
+          <label htmlFor="username" className="visuallyHidden">Username</label>
+          <input type="text" id="username" name="username" onChange={props.handleChange} value={props.username} placeholder="Username" required />
 
           <label htmlFor="email" className="visuallyHidden">Email Address</label>
           <input type="email" onChange={props.handleChange} id="email" name="userEmail" value={props.userEmail} placeholder="Email Address" required />

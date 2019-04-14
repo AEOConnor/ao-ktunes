@@ -306,9 +306,10 @@ renderRedirect = () => {
         <div>
           
            <Header
+            listUsersSongs={this.listUsersSongs}
             username={this.state.username}
             signInSuccess={this.state.signInSuccess}
-            usersDownloads={this.state.usersDownloads}
+            usersLibrary={this.state.usersLibrary}
           />
 
     
@@ -317,7 +318,6 @@ renderRedirect = () => {
           <Route path="/home" render={() => {
             return (
               <HomeLibrary
-                listUsersSongs={this.listUsersSongs}
                 homeLibrary={this.state.kTunesLibrary}
                 downloadSong={this.downloadSong}
                 downloadError={this.state.downloadError}
