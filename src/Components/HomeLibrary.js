@@ -6,7 +6,17 @@ const HomeLibrary = (props) => {
 
     <main className="wrapper">
     <aside>
-
+      <h2>Recently Downloaded</h2>
+      {props.lastDownloadId.map(song => {
+        return (
+          <ul>
+            <li key={song.id}>
+              <p>{song.title}</p>
+              <p>{song.artist}</p>
+            </li>
+          </ul>
+        )
+      })}
     </aside>
 
       <table>

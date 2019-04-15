@@ -198,9 +198,6 @@ class App extends Component {
   //on click event handler function to get song id and pass it as an argument in the get song function
   downloadSong = (e) => {
 
-    console.log(e.currentTarget)
-    console.log(e.currentTarget.value)
-    console.log(e.target.value)
     const songId = (e.currentTarget.value);
 
     this.getSong(songId);
@@ -347,6 +344,7 @@ class App extends Component {
                 homeLibrary={this.state.kTunesLibrary}
                 downloadSong={this.downloadSong}
                 usersLibrary={this.state.usersLibrary}
+                lastDownloadId={this.state.lastDownloadId}
               />
             )
           }}
