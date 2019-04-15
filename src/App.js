@@ -1,7 +1,7 @@
 //dependencies 
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //components
 import LandingPage from './Components/LandingPage.js'
@@ -104,13 +104,13 @@ class App extends Component {
         return 1;
       }
     })
-    //set state to be the final restructured and sorted array
+ 
     this.setState({
       kTunesLibrary: finalArray
     })
   }
 
-  //function to create new user in api
+  //function to sign in existing user and retrive their downloaded songs
   listUsersSongs = (e) => {
     e.preventDefault()
 
@@ -154,12 +154,12 @@ class App extends Component {
       })
   }
 
-  //add previously downloaded songs to the users current library
+  //functio nto add previously downloaded songs to the users current library
   addUsersDownloadsToLibrary = (usersDownloads) => {
 
     const downloadedSongs = []
     const trimmedSongs = []
-    
+
     usersDownloads[0].forEach(songId => {
       const id = (songId).trim()
       trimmedSongs.push(id)
@@ -173,14 +173,12 @@ class App extends Component {
       })
     })
 
-
     this.setState({
       usersLibrary: downloadedSongs
     })
-
   }
 
-  //matches the song id of download to songs in ktunes library and creates new song record in users library
+  // function to match the song id of download to songs in ktunes library and create new song record in users library
   updateUsersLibrary = (songId) => {
     const usersLibrary = []
 
@@ -195,7 +193,7 @@ class App extends Component {
     })
   }
 
-  //on click event handler function to get song id and pass it as an argument in the get song function
+  //function to get song id and pass it as an argument in the get song function
   downloadSong = (e) => {
 
     const songId = (e.currentTarget.value);
@@ -203,21 +201,20 @@ class App extends Component {
     this.getSong(songId);
     this.updateUsersLibrary(songId)
     this.getLastDownload(songId)
-
   }
 
-
+ //function to get user's last downloaded song to be displayed on DOM
   getLastDownload = (songId) => {
     const recentDownloadId = [];
 
     this.state.kTunesLibrary.map(song => {
-      if(song.id === songId){
-       recentDownloadId.push(song)
+      if (song.id === songId) {
+        recentDownloadId.push(song)
       }
     })
     this.setState({
-          lastDownloadId: recentDownloadId
-        })
+      lastDownloadId: recentDownloadId
+    })
   }
 
 
@@ -254,6 +251,7 @@ class App extends Component {
       })
   }
 
+  //function to create new user in the api back-end
   createUser = (e) => {
     e.preventDefault()
 
@@ -307,12 +305,14 @@ class App extends Component {
     })
   }
 
+  //sign user out
   signOut = () => {
     this.setState({
       signInSuccess: false,
       userEmail: "",
       userPassword: "",
-      username: ""
+      username: "",
+      lastDownloadId: {}
     })
   }
 

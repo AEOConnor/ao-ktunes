@@ -19,7 +19,10 @@ const HomeLibrary = (props) => {
                       <li key={song.id}>
                         <p>{song.title}</p>
                         <p>{song.artist}</p>
-                        <button><i className="far fa-play-circle"></i></button>
+                        <button>
+                          <i className="far fa-play-circle" aria-hidden="true"></i>
+                          <span className="sr-only">Listen to {song.title} by {song.artist}.</span>
+                        </button>
                       </li>
                     </ul>
                   )
@@ -40,8 +43,10 @@ const HomeLibrary = (props) => {
                         <td>{song.title}</td>
                         <td>{song.artist}</td>
                         <td>
-                          <button value={song.id} onClick={props.downloadSong}><span><i className="fas fa-arrow-circle-down"></i>
-                          </span></button>
+                          <button value={song.id} onClick={props.downloadSong}>
+                            <i className="fas fa-arrow-circle-down" aria-hidden="true"></i>
+                            <span className="sr-only">Download {song.title} by {song.artist}.</span>
+                          </button>
                         </td>
                       </tr>
                     )

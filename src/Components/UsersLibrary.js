@@ -24,7 +24,12 @@ const UsersLibrary = (props) => {
                     <tr key={song.id}>
                       <td>{song.title}</td>
                       <td>{song.artist}</td>
-                      <td><button><i className="far fa-play-circle"></i></button></td>
+                      <td>
+                        <button>
+                          <i className="far fa-play-circle" aria-hidden="true"></i>
+                          <span className="sr-only">Listen to {song.title} by {song.artist}.</span>
+                        </button>
+                      </td>
                     </tr>
                   )
                 })}
@@ -35,7 +40,6 @@ const UsersLibrary = (props) => {
         : 
         <Redirect to="/" />}
     </div>
-
   )
 }
 
