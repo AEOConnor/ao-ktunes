@@ -6,6 +6,7 @@ const CreateUser = (props) => {
     <main className="gradient">
       <h2>Explore. Listen. Repeat.</h2>
       <p>Create an account below.</p>
+      <Link to="/signin" className="signInLink">Already a user? Sign in.</Link>
       <form onSubmit={props.createUser} className="signInForm">
 
         <label htmlFor="username" className="visuallyHidden">Username</label>

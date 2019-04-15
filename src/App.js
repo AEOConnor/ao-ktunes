@@ -1,7 +1,6 @@
 //dependencies 
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 //components
@@ -30,7 +29,6 @@ class App extends Component {
       userPassword: "",
       lastDownloadId: [],
       usersDownloads: [],
-      downloadError: null,
       signInError: null,
       errorMessage: null,
       signInSuccess: false
@@ -161,7 +159,7 @@ class App extends Component {
 
     const downloadedSongs = []
     const trimmedSongs = []
-
+    
     usersDownloads[0].forEach(songId => {
       const id = (songId).trim()
       trimmedSongs.push(id)
@@ -174,6 +172,8 @@ class App extends Component {
         }
       })
     })
+
+
     this.setState({
       usersLibrary: downloadedSongs
     })
@@ -307,15 +307,13 @@ class App extends Component {
     })
   }
 
-  componentDidUpdate() {
-    this.renderRedirect()
-  }
-
-  renderRedirect = () => {
-    if (this.state.signInSuccess !== true) {
-      return <Redirect to="/" />;
-    }
-
+  signOut = () => {
+    this.setState({
+      signInSuccess: false,
+      userEmail: "",
+      userPassword: "",
+      username: ""
+    })
   }
 
   render() {
@@ -327,6 +325,7 @@ class App extends Component {
             username={this.state.username}
             signInSuccess={this.state.signInSuccess}
             usersLibrary={this.state.usersLibrary}
+            signOut={this.signOut}
           />
 
           <Route path="/" exact render={() => {
@@ -343,8 +342,10 @@ class App extends Component {
               <HomeLibrary
                 homeLibrary={this.state.kTunesLibrary}
                 downloadSong={this.downloadSong}
+                usersDownloads={this.state.usersDownloads}
                 usersLibrary={this.state.usersLibrary}
                 lastDownloadId={this.state.lastDownloadId}
+                signInSuccess={this.state.signInSuccess}
               />
             )
           }}
@@ -385,10 +386,12 @@ class App extends Component {
             return (
               <UsersLibrary
                 usersLibrary={this.state.usersLibrary}
+                usersDownloads={this.state.usersDownloads}
+                username={this.state.username}
+                signInSuccess={this.state.signInSuccess}
               />
             )
           }} />
-
           <Footer />
         </div>
       </Router>

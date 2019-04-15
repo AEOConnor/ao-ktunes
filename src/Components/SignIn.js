@@ -7,6 +7,7 @@ const SignIn = (props) => {
     <main className="gradient">
       <h2>Explore. Listen. Repeat.</h2>
       <p>Welcome back! Please sign in.</p>
+      <Link to="/signUp" className="signInLink">New to kTunes? Sign up!</Link>
       <form onSubmit={props.listUsersSongs} className="signInForm">
 
         <label htmlFor="username" className="visuallyHidden">Username</label>
