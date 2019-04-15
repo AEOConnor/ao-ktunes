@@ -5,7 +5,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 /* Global styles begin */
-body {
+html {
   font-size: 120%;
   font-family: "Helvetica", "Arial", "sans-serif";
   line-height: 1.6;
@@ -198,29 +198,55 @@ input[type="submit"]:focus {
 
 /* HomeLibrary component styles start */
 
-.songDetails {
+ 
+li {
+  border-bottom: .5px solid lightgray;
+
+}
+
+
+
+.musicLibrary button {
+  background: transparent;
+  border: none;
+
+}
+
+
+.musicLibrary li {
+  text-align: left;
+}
+
+.libraryHeader {
   display: flex;
   justify-content: space-between;
+}
+
+.fa-arrow-circle-down {
+  color: var(--kepler-blue);
+  font-size: 1.6rem;
+}
+
+.songDetails {
+  display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   margin: 10px 0;
-  border: 1px solid grey;
-  padding: 20px;
-  background: lightgray;
+  /* padding: 20px; */
+ 
 }
 
 .songDetails h2,
 .songDetails h3 {
-  width: 40%;
+  /* width: 40%; */
+  flex-basis: 2;
 }
 
 .songDetails button {
-  width: 20%;
+ flex-basis: 1;
 }
 
-.songDetails h3 {
-  text-align: center;
-}
 
 /* HomeLibrary component styles end */
 

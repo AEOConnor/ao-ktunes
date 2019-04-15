@@ -5,20 +5,27 @@ const UsersLibrary = (props) => {
   return (
 
     <main className="wrapper">
-      <ul className="musicLibrary">
-        {
-          props.usersLibrary.map(song => {
+
+      <table>
+        <thead>
+          <tr>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.usersLibrary.map(song => {
             return (
-              <li key={song.id} className="songDetails">
-                <h2>{song.title}</h2>
-                <h3>{song.artist}</h3>
-                <button><i class="far fa-play-circle"></i></button>
-              </li>
+              <tr key={song.id}>
+                <td>{song.title}</td>
+                <td>{song.artist}</td>
+                <td><button><i className="far fa-play-circle"></i></button></td>
+              </tr>
             )
-          }
-          )
-        }
-      </ul>
+          })}
+        </tbody>
+      </table>
     </main>
 
 

@@ -28,7 +28,7 @@ class App extends Component {
       username: "",
       userEmail: "",
       userPassword: "",
-      userSongId: "",
+      lastDownloadId: [],
       usersDownloads: [],
       downloadError: null,
       signInError: null,
@@ -195,13 +195,34 @@ class App extends Component {
     })
   }
 
-  //on click event handler function
+  //on click event handler function to get song id and pass it as an argument in the get song function
   downloadSong = (e) => {
-    const songId = (e.target.value);
+
+    console.log(e.currentTarget)
+    console.log(e.currentTarget.value)
+    console.log(e.target.value)
+    const songId = (e.currentTarget.value);
 
     this.getSong(songId);
     this.updateUsersLibrary(songId)
+    this.getLastDownload(songId)
+
   }
+
+
+  getLastDownload = (songId) => {
+    const recentDownloadId = [];
+
+    this.state.kTunesLibrary.map(song => {
+      if(song.id === songId){
+       recentDownloadId.push(song)
+      }
+    })
+    this.setState({
+          lastDownloadId: recentDownloadId
+        })
+  }
+
 
   //function to get song id, midi file, and update user's library
   getSong = (songId) => {
