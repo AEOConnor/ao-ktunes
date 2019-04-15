@@ -1,14 +1,14 @@
 {
-  "main.css": "/test/static/css/main.23c7f389.chunk.css",
-  "main.js": "/test/static/js/main.c600a778.chunk.js",
-  "main.js.map": "/test/static/js/main.c600a778.chunk.js.map",
-  "runtime~main.js": "/test/static/js/runtime~main.eded8796.js",
-  "runtime~main.js.map": "/test/static/js/runtime~main.eded8796.js.map",
-  "static/js/2.83ae9510.chunk.js": "/test/static/js/2.83ae9510.chunk.js",
-  "static/js/2.83ae9510.chunk.js.map": "/test/static/js/2.83ae9510.chunk.js.map",
-  "index.html": "/test/index.html",
-  "precache-manifest.6b7bd0e520c6f3c3820efeade482bba0.js": "/test/precache-manifest.6b7bd0e520c6f3c3820efeade482bba0.js",
-  "service-worker.js": "/test/service-worker.js",
-  "static/css/main.23c7f389.chunk.css.map": "/test/static/css/main.23c7f389.chunk.css.map",
-  "static/media/keplerLogo.png": "/test/static/media/keplerLogo.3599862a.png"
+  "main.css": "/ao-ktunes/static/css/main.23c7f389.chunk.css",
+  "main.js": "/ao-ktunes/static/js/main.2745888c.chunk.js",
+  "main.js.map": "/ao-ktunes/static/js/main.2745888c.chunk.js.map",
+  "runtime~main.js": "/ao-ktunes/static/js/runtime~main.c4895ac5.js",
+  "runtime~main.js.map": "/ao-ktunes/static/js/runtime~main.c4895ac5.js.map",
+  "static/js/2.83ae9510.chunk.js": "/ao-ktunes/static/js/2.83ae9510.chunk.js",
+  "static/js/2.83ae9510.chunk.js.map": "/ao-ktunes/static/js/2.83ae9510.chunk.js.map",
+  "index.html": "/ao-ktunes/index.html",
+  "precache-manifest.28299db81e7d9bb3c0fff7e736097e44.js": "/ao-ktunes/precache-manifest.28299db81e7d9bb3c0fff7e736097e44.js",
+  "service-worker.js": "/ao-ktunes/service-worker.js",
+  "static/css/main.23c7f389.chunk.css.map": "/ao-ktunes/static/css/main.23c7f389.chunk.css.map",
+  "static/media/keplerLogo.png": "/ao-ktunes/static/media/keplerLogo.3599862a.png"
 }
